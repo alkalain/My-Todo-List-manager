@@ -7,12 +7,28 @@ export default{
         'app-form':AppForm
     },
     template:`
-        <section>
-        <app-task-list :tasks="filters.inProgress" title="In Progress"></app-task-list>
-        <app-task-list :tasks="filters.completed" title="Completed"></app-task-list>
         
-        <app-form @addTask="addTask"></app-form>
-        </section>
+            <div class="columns is-multiline">
+                <div class="column center is-full">
+                    <app-task-list 
+                    :tasks="filters.inProgress" 
+                    title="In Progress" 
+                    class="column is-one-third is-info has-background-dark has-text-primary-light br"
+                    ></app-task-list>
+                </div>
+                    <div class="column center is-full">
+                        <app-task-list 
+                        :tasks="filters.completed" 
+                        title="Completed"
+                        class="column is-one-third is-info has-background-dark has-text-primary-light br"
+                        ></app-task-list>
+                    </div>
+                
+                <div class="column center is-full has-text-primary-light is-one-third br">
+                    <app-form @addTask="addTask" ></app-form>
+                </div>
+            </div>
+        
     `,
     data(){
         return{

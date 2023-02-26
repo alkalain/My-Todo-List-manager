@@ -1,10 +1,12 @@
 export default{
     template:`
-         <form @submit.prevent="submit">
-            <label for="newTask">New task:</label>
-            <input v-model="newTask" type="text" placeholder="Enter new task">
-            <button type="submit">Add</button>
-         </form>
+         <div class="">
+             <form @submit.prevent="submit" class="field is-medium is-one-third is-centered ">
+                <label for="newTask">New task:</label>
+                <input v-model="newTask" type="text" placeholder="Enter new task" class="input is info">
+                <button type="submit" class="button is-infov">Add</button>
+             </form>
+         </div>
     `,
     data(){
         return{
