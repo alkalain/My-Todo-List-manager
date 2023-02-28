@@ -36,7 +36,8 @@ export default{
                 {
                     name:'My task',
                     complete:false,
-                    id:1
+                    id:1,
+                    tag:'task'
                 }
             ],
         }
@@ -54,7 +55,8 @@ export default{
             this.tasks.push({
                 name:name,
                 completed:false,
-                id:this.tasks.length+1
+                id:this.tasks.length+1,
+                tag:'all'
             });
         }
     }

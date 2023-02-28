@@ -4,7 +4,7 @@ export default{
              <form @submit.prevent="submit" class="field is-medium is-one-third is-centered ">
                 <label for="newTask">New task:</label>
                 <input v-model="newTask" type="text" placeholder="Enter new task" class="input is info">
-                <button type="submit" class="button is-infov">Add</button>
+                <button type="submit" class="button is-info">Add</button>
              </form>
          </div>
     `,
