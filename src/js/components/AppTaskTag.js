@@ -1,13 +1,11 @@
 export default{
     template:`
-    <div>
+    <div class="">
         <button
-        @click="currentTag=tag"
+        @click="currentTag = tag"
         v-for="tag in tags"
-        class="button"
-        :class="{
-            'button is-info':tag===currentTag
-        }"
+        class="button is-size-7 has-background-grey-dark has-text-primary-light br"
+       
         >{{tag}}</button>
     </div>
     `,

@@ -37,7 +37,19 @@ export default{
                     name:'My task',
                     complete:false,
                     id:1,
-                    tag:'task'
+                    tag:'gm'
+                },
+                {
+                    name:'My task 2',
+                    complete:false,
+                    id:2,
+                    tag:'fr'
+                },
+                {
+                    name:'My task 3',
+                    complete:false,
+                    id:3,
+                    tag:'en'
                 }
             ],
         }
@@ -56,7 +68,7 @@ export default{
                 name:name,
                 completed:false,
                 id:this.tasks.length+1,
-                tag:'all'
+                tag:'new'
             });
         }
     }
