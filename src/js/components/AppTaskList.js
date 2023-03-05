@@ -1,19 +1,18 @@
 import AppTask from "./AppTask.js";
+import AppTaskTag from "./AppTaskTag.js";
 
 export default{
-    components:{AppTask},
+    components:{AppTask,AppTaskTag},
 
     template:`
     <section v-show="tasks.length" class="">
     <h2>{{title}}</h2>
-    <div class="">
-        <button
-        @click="currentTag = tag"
-        v-for="tag in tags"
-        class="button is-size-7 has-background-grey-dark has-text-primary-light br"
-       
-        >{{tag}}</button>
-    </div>
+    
+    <app-task-tag 
+    :initialTags="tasks.map(a=>a.tag)"
+    @change="currentTag=$event"
+    />
+    
     <ul>
         <app-task
         v-for="task in filteredTasks"
@@ -29,6 +28,8 @@ export default{
         tasks: Array,
         title: String
     },
+
+    //tagF
     data(){
         return{
             currentTag:'all'
@@ -41,9 +42,9 @@ export default{
             }
             return this.tasks.filter(a => a.tag === this.currentTag);
         },
-        tags(){
-            return  ['all', ...new Set(this.tasks.map(a=>a.tag))];
-        }
+       
+      
+        
     }
     /* Finir les tag en réglant le pb des tag et voir pour le bp suprr */
 }
