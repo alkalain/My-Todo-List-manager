@@ -29,7 +29,7 @@ export default{
         title: String
     },
 
-    //tagF
+    //tag Functions
     data(){
         return{
             currentTag:'all'

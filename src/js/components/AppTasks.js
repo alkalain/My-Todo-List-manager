@@ -70,7 +70,11 @@ export default{
                 id:this.tasks.length+1,
                 tag:'new'
             });
-        }
+        },
+       /* method removing the task element that is targeted  
+        removeTask(index){
+            this.tasks.splice(index,1)
+        } */
     }
 
 }
