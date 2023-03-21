@@ -6,13 +6,26 @@ export default{
 
     template:`
     <section v-show="tasks.length" class="">
-    <h2>{{title}}</h2>
-    
-    <app-task-tag 
-    :initialTags="tasks.map(a=>a.tag)"
-    @change="currentTag=$event"
-    />
-    
+    <div class="flex justify-between">
+        <h2>
+        {{title}}
+        
+        <span>({{tasks.length}})</span>
+        </h2>
+        
+        <button v-show="canToggle" @click="$emit('toggle')" 
+        class="button is-darck">
+            
+            <i class="fas fa-regular fa-circle-xmark"></i>
+            
+        </button>
+
+        <app-task-tag
+        :initialTags="tasks.map(a=>a.tag)"
+        @change="currentTag=$event"
+        />
+        
+    </div>
     <ul>
         <app-task
         v-for="task in filteredTasks"
@@ -26,7 +39,8 @@ export default{
     `,
     props:{
         tasks: Array,
-        title: String
+        title: String,
+        canToggle: {type:Boolean, default: false}
     },
 
     //tag Functions

@@ -17,10 +17,16 @@ export default{
                     ></app-task-list>
                 </div>
                     <div class="column center is-full">
+
                         <app-task-list 
+                        
+                        v-if="show"
                         :tasks="filters.completed" 
                         title="Completed"
                         class="column is-one-third is-info has-background-dark has-text-primary-light br"
+                        can-toggle
+                        @toggle="show=!show"
+
                         ></app-task-list>
                     </div>
                 
@@ -52,6 +58,7 @@ export default{
                     tag:'en'
                 }
             ],
+            show:true,
         }
     },
     computed:{
