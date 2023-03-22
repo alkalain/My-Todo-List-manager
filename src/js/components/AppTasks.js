@@ -8,29 +8,26 @@ export default{
     },
     template:`
         
-            <div class="columns is-multiline">
+            <div class="columns is-multiline is-info has-background-darck has-text-primary-light is-one-third is-align-items-flex-start">
                 <div class="column center is-full">
                     <app-task-list 
-                    :tasks="filters.inProgress" 
-                    title="In Progress" 
-                    class="column is-one-third is-info has-background-dark has-text-primary-light br"
+                        class="column br has-background-gray-light"
+                        :tasks="filters.inProgress" 
+                        title="In Progress" 
                     ></app-task-list>
                 </div>
-                    <div class="column center is-full">
-
-                        <app-task-list 
-                        
+                <div class="column center is-full">
+                    <app-task-list 
+                        class="column br"
                         v-if="show"
                         :tasks="filters.completed" 
                         title="Completed"
-                        class="column is-one-third is-info has-background-dark has-text-primary-light br"
                         can-toggle
                         @toggle="show=!show"
-
-                        ></app-task-list>
-                    </div>
+                    ></app-task-list>
+                </div>
                 
-                <div class="column center is-full has-text-primary-light is-one-third br">
+                <div class="column center is-full  br">
                     <app-form @addTask="addTask" ></app-form>
                 </div>
             </div>
@@ -53,7 +50,7 @@ export default{
                 },
                 {
                     name:'My task 3',
-                    complete:false,
+                    complete:true,
                     id:3,
                     tag:'en'
                 }
